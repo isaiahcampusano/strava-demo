@@ -10,10 +10,4 @@ Use the on-screen actions or the left/right arrow keys to move through the flow.
 
 ## Files
 
-- `index.html` - prototype markup
-- `styles.css` - Strava-style mobile UI
-- `script.js` - screen navigation
-- `assets/` - local prototype imagery
-- `HANDOFF.md` - product and implementation direction
-- `COPILOT_HANDOFF.md` - next-pass interaction and incentive requirements
-- `walkthrough-script.md` - short demo talk track
+- `index.html`
