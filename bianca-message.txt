@@ -1,0 +1,1 @@
+Bianca - great connecting with you. I kept thinking about how Strava Groups could create more active participation without adding a new social surface, so I built a short prototype around paired club challenges. It shows the idea moving through the existing club, activity feed, and activity-detail flow. Sharing in case it is useful context or sparks a reaction.

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="A clickable concept showing challenge-driven engagement inside Strava Groups.">
+  <title>Strava Groups Challenge Concept</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M4 5.5h11a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z"/><path d="M17 9h3a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-1v2.5L15.5 19H13"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 19-7-7 7-7"/></symbol>
+    <symbol id="i-run" viewBox="0 0 24 24"><circle cx="15.5" cy="4.5" r="2"/><path d="m9 21 2.5-6.5-3-2 2.5-4 3.5 2 3 1.5 3 1"/><path d="m11.5 14.5 4 2.5 1.5 4M8.5 12.5 5 16l-3 1"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19v-1.5A4.5 4.5 0 0 1 8 13h2a4.5 4.5 0 0 1 4.5 4.5V19"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14h1.5a3.5 3.5 0 0 1 3.5 3.5V19"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-public" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.3 2.5 3.5 5.5 3.5 9S14.3 18.5 12 21c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z"/></symbol>
+    <symbol id="i-invite" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v2M18 8v6M15 11h6"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 3v13M8 7l4-4 4 4"/><path d="M5 10H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.1"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 14h2M14 14h2M8 17h2"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m6 14 3-4 3 6 3-8 3 5"/></symbol>
+    <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m5 18 5-5 3 3 2-2 4 4"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-shoe" viewBox="0 0 24 24"><path d="M4 4c2 2 2 5 3 7 1.5 3 5 3 8 4 2 .7 4.2 2.2 4.5 4H8c-3 0-5-2-5-5 0-2 .6-3.8 1-5.5V4Z"/><path d="M7 10h4M9 13h4"/></symbol>
+    <symbol id="i-watch" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="m9 6 1-3h4l1 3M9 18l1 3h4l1-3M9 12h3l2-2"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M6 18h11a4 4 0 0 0 .5-8A6 6 0 0 0 6.2 8.5 4.8 4.8 0 0 0 6 18Z"/><path d="M8 4v2M3.5 7.5 5 9M13 5l-1 2"/></symbol>
+    <symbol id="i-kudos" viewBox="0 0 24 24"><path d="M8 21H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h4M8 21h8.5a3 3 0 0 0 2.8-2l2.3-6.4a2 2 0 0 0-1.9-2.7H15l1-4.1A2.3 2.3 0 0 0 13.8 3L8 10v11Z"/></symbol>
+    <symbol id="i-comment" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 3v-3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M6 9h12M6 13h8"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1v-9Z"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z"/><path d="M9 3v15M15 6v15"/></symbol>
+    <symbol id="i-record" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/></symbol>
+    <symbol id="i-groups" viewBox="0 0 24 24"><path d="m12 2 4 7-4 7-4-7 4-7ZM7 11l4 7-4 4-5-8 5-3ZM17 11l-4 7 4 4 5-8-5-3Z"/></symbol>
+    <symbol id="i-you" viewBox="0 0 24 24"><path d="M6 4h12v17H6zM9 4V2h6v2M9 9h6M9 13h6M9 17h4"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-medal" viewBox="0 0 24 24"><path d="m8 3 4 6 4-6M7 3h10"/><circle cx="12" cy="15" r="6"/><path d="m12 12 1 2 2 .3-1.5 1.5.4 2.2-1.9-1-1.9 1 .4-2.2L9 14.3l2-.3 1-2Z"/></symbol>
+  </svg>
+
+  <main class="demo-stage">
+    <section class="phone" aria-label="Clickable Strava Groups concept prototype">
+      <div class="phone-screen">
+        <section class="app-screen is-active" data-screen="0" data-screen-name="Groups" aria-hidden="false">
+          <header class="status-bar"><span>3:04</span><span class="status-icons">LTE 100%</span></header>
+          <div class="groups-header">
+            <button class="icon-button bare" type="button" data-action="toast" data-toast="Not included in this prototype" aria-label="Search"><svg><use href="#i-search"/></svg></button>
+            <h1>Groups</h1>
+            <div class="header-actions">
+              <button class="icon-button bare" type="button" data-action="toast" data-toast="Not included in this prototype" aria-label="Messages"><svg><use href="#i-message"/></svg></button>
+              <button class="icon-button bare has-alert" type="button" data-action="toast" data-toast="Not included in this prototype" aria-label="Settings"><svg><use href="#i-settings"/></svg></button>
+            </div>
+          </div>
+          <nav class="group-tabs" aria-label="Group sections">
+            <button type="button" data-action="toast" data-toast="Not included in this prototype">Active</button><button type="button" data-action="toast" data-toast="Not included in this prototype">Challenges</button><button class="active" type="button" data-action="toast" data-toast="Not included in this prototype">Clubs</button>
+          </nav>
+          <div class="screen-scroll club-list-scroll">
+            <div class="create-club"><span>Create your own Strava club</span><button type="button" data-action="toast" data-toast="Not included in this prototype">Create a Club</button></div>
+
+            <button class="club-row" type="button" data-action="open-club" data-next="1" aria-label="Open North Quad Run Club">
+              <span class="club-mark north-quad"><svg><use href="#i-run"/></svg><b>NQ</b></span>
+              <span class="club-copy">
+                <strong>North Quad Run Club</strong>
+                <span><svg><use href="#i-run"/></svg> 186 Members</span>
+                <span>Campus community &middot; 3 posts</span>
+                <em>Weekly challenge &middot; 12 members paired</em>
+              </span>
+              <svg class="row-chevron"><use href="#i-chevron"/></svg>
+            </button>
+
+            <div class="club-row">
+              <span class="club-mark river">RTR</span>
+              <span class="club-copy"><strong>River Trail Runners</strong><span><svg><use href="#i-run"/></svg> 342 Members</span><span>Local community &middot; 8 posts</span></span>
+            </div>
+            <div class="club-row">
+              <span class="club-mark cycling">CC</span>
+              <span class="club-copy"><strong>Campus Cycling Club</strong><span><svg><use href="#i-activity"/></svg> 219 Members</span><span>Campus community &middot; 5 posts</span></span>
+            </div>
+            <div class="club-row">
+              <span class="club-mark strava-mark"><svg><use href="#i-groups"/></svg></span>
+              <span class="club-copy"><strong>The Strava Club</strong><span><svg><use href="#i-public"/></svg> 7,110,565 Members</span><span>San Francisco, California &middot; 1,290 posts</span></span>
+            </div>
+          </div>
+          <nav class="bottom-nav" aria-label="Primary navigation">
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-home"/></svg><span>Home</span><b class="nav-count">11</b></button>
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-map"/></svg><span>Maps</span></button>
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-record"/></svg><span>Record</span></button>
+            <button class="active" type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-groups"/></svg><span>Groups</span></button>
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-you"/></svg><span>You</span></button>
+          </nav>
+        </section>
+
+        <section class="app-screen" data-screen="1" data-screen-name="Club" aria-hidden="true">
+          <header class="status-bar overlay"><span>3:04</span><span class="status-icons">LTE 100%</span></header>
+          <div class="screen-scroll club-detail-scroll">
+            <div class="club-cover">
+              <img src="assets/north-quad-run-club.jpg" alt="North Quad Run Club members after a campus run">
+              <button class="circle-button cover-back" data-next="0" aria-label="Back to clubs"><svg><use href="#i-back"/></svg></button>
+              <button class="circle-button cover-settings" type="button" data-action="toast" data-toast="Not included in this prototype" aria-label="Club settings"><svg><use href="#i-settings"/></svg></button>
+            </div>
+            <div class="club-profile">
+              <div class="club-mark north-quad profile-logo"><svg><use href="#i-run"/></svg><b>NQ</b></div>
+              <h2>North Quad Run Club</h2>
+              <div class="profile-meta">
+                <span><svg><use href="#i-run"/></svg> Running</span>
+                <span><svg><use href="#i-people"/></svg> 186 Members</span>
+                <span><svg><use href="#i-lock"/></svg> Private</span>
+              </div>
+              <p>Campus community</p>
+            </div>
+            <nav class="club-actions" aria-label="Club actions">
+              <button type="button" data-action="toast" data-toast="Not included in this prototype"><span><svg><use href="#i-invite"/></svg></span>Invite</button>
+              <button type="button" data-action="toast" data-toast="Not included in this prototype"><span><svg><use href="#i-share"/></svg></span>Share</button>
+              <button type="button" data-action="toast" data-toast="Not included in this prototype"><span><svg><use href="#i-info"/></svg></span>Overview</button>
+              <button type="button" data-action="toast" data-toast="Not included in this prototype"><span><svg><use href="#i-calendar"/></svg></span>Events</button>
+              <button type="button" data-action="toast" data-toast="Not included in this prototype"><span><svg><use href="#i-activity"/></svg></span>Activities</button>
+            </nav>
+
+            <article class="weekly-challenge">
+              <div class="module-kicker"><span>Weekly club challenge</span><span>Ends Sunday</span></div>
+              <h3>Complete two runs with the same clubmate this week</h3>
+              <p class="challenge-copy">Complete two runs with the same clubmate by Sunday. Each shared run adds to the club's weekly progress.</p>
+              <div class="challenge-progress"><span><b>12</b> members paired</span><span class="progress-value"><b>61%</b> complete</span></div>
+              <div class="progress-track"><span style="width:61%"></span></div>
+              <button class="primary-button" type="button" data-action="join-challenge" data-next="2">Join challenge</button>
+            </article>
+
+            <div class="composer">
+              <span class="avatar avatar-ellen">EP</span><span>Post something...</span><svg><use href="#i-photo"/></svg>
+            </div>
+            <article class="club-post">
+              <div class="post-head"><span class="avatar avatar-lab">HP</span><div><strong>Human Performance Lab</strong><span>Today at 10:10 PM</span></div></div>
+              <h4>Running research</h4>
+              <p>Looking for runners to answer a brief post-workout survey. Read more...</p>
+            </article>
+          </div>
+          <nav class="bottom-nav" aria-label="Primary navigation">
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-home"/></svg><span>Home</span><b class="nav-count">11</b></button>
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-map"/></svg><span>Maps</span></button>
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-record"/></svg><span>Record</span></button>
+            <button class="active" type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-groups"/></svg><span>Groups</span></button>
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-you"/></svg><span>You</span></button>
+          </nav>
+        </section>
+
+        <section class="app-screen" data-screen="2" data-screen-name="Challenge" aria-hidden="true">
+          <header class="status-bar"><span>3:05</span><span class="status-icons">LTE 100%</span></header>
+          <div class="sub-header">
+            <button class="icon-button bare" data-next="1" aria-label="Back to club"><svg><use href="#i-back"/></svg></button>
+            <h1>Challenge</h1>
+            <button class="icon-button bare" type="button" data-action="toast" data-toast="Not included in this prototype" aria-label="More options"><svg><use href="#i-more"/></svg></button>
+          </div>
+          <div class="screen-scroll challenge-scroll">
+            <section class="challenge-summary">
+              <span class="orange-label">North Quad Run Club</span>
+              <h2>Complete two runs with the same clubmate this week</h2>
+              <p>Complete two runs with the same clubmate by Sunday. Each shared run adds to the club's weekly progress.</p>
+              <div class="summary-stats"><span><b>2</b> shared runs</span><span><b>12</b> members paired</span></div>
+              <div class="streak-note"><span class="check-circle"><svg><use href="#i-check"/></svg></span><span>Complete both runs to add to this week's club progress.</span></div>
+            </section>
+            <section class="partner-section">
+              <div class="section-heading"><div><span>Suggested partner</span><h3 class="partner-name">Maya L.</h3></div><span class="match-pill">Best match</span></div>
+              <div class="partner-row">
+                <span class="avatar avatar-maya">ML</span>
+                <div><strong class="partner-name-inline">Maya L.</strong><span class="partner-meta">Usually runs Tue / Thu</span></div>
+              </div>
+              <ul class="match-reasons">
+                <li><svg><use href="#i-run"/></svg><span>8:40&ndash;9:00 /mi pace</span></li>
+                <li><svg><use href="#i-calendar"/></svg><span>Same Tuesday and Thursday availability</span></li>
+                <li><svg><use href="#i-map"/></svg><span>Often runs the North Quad loop</span></li>
+              </ul>
+              <button class="primary-button" type="button" data-action="pair-with-maya" data-next="3">Pair with Maya</button>
+              <button class="text-button" type="button" data-action="toggle-alternate" aria-pressed="false">See other clubmates</button>
+            </section>
+            <section class="how-it-works"><h3>How it works</h3><p>Your runs can be recorded together or matched after both activities are uploaded.</p></section>
+          </div>
+          <nav class="bottom-nav" aria-label="Primary navigation">
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-home"/></svg><span>Home</span><b class="nav-count">11</b></button>
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-map"/></svg><span>Maps</span></button>
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-record"/></svg><span>Record</span></button>
+            <button class="active" type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-groups"/></svg><span>Groups</span></button>
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-you"/></svg><span>You</span></button>
+          </nav>
+        </section>
+
+        <section class="app-screen" data-screen="3" data-screen-name="Club activity" aria-hidden="true">
+          <header class="status-bar"><span>3:07</span><span class="status-icons">LTE 100%</span></header>
+          <div class="sub-header feed-header">
+            <button class="back-label" data-next="2"><svg><use href="#i-back"/></svg><span>Club</span></button>
+            <h1>Club Activity Feed</h1><span></span>
+          </div>
+          <div class="screen-scroll activity-feed-scroll">
+            <div class="progress-update"><span class="check-circle"><svg><use href="#i-check"/></svg></span><div><strong class="progress-title">Shared run progress</strong><span class="progress-copy">Complete both runs to add to this week's club progress.</span></div></div>
+            <article class="feed-activity">
+              <div class="athlete-row"><span class="avatar avatar-ellen">EP</span><div><strong>Ellen Powell</strong><span>Today &middot; Garmin Forerunner 265S</span><span class="location-line"><svg><use href="#i-run"/></svg> North Quad campus loop</span></div></div>
+              <div class="feed-activity-copy"><h2>Morning Run</h2><div class="feed-metrics"><span><small>Distance</small><b>5.00 mi</b></span><span><small>Pace</small><b>8:52 /mi</b></span><span><small>Achievements</small><b class="achievement-count"><svg><use href="#i-medal"/></svg>1</b></span></div></div>
+              <button class="feed-map" data-next="4" aria-label="View Ellen's morning run">
+                <span class="map-label map-label-one">West Campus</span><span class="map-label map-label-two">North Quad</span>
+                <svg class="route-line" viewBox="0 0 390 220" aria-hidden="true"><path d="M76 40 105 73 98 106 162 125 214 113 259 146 304 134 329 170 297 193"/><circle cx="76" cy="40" r="5"/><circle class="finish" cx="297" cy="193" r="6"/></svg>
+              </button>
+              <div class="challenge-context"><span class="orange-dot"></span><div><strong>Weekly challenge</strong><span class="challenge-context-copy">Shared runs add to this week's club progress.</span></div></div>
+              <div class="kudos-line"><span class="avatar-stack"><i>EP</i><i>ML</i><i>JR</i></span><span class="kudos-count">8 gave kudos</span></div>
+              <div class="feed-actions"><button type="button" data-action="toggle-feed-kudos" aria-pressed="false" aria-label="Give kudos to Ellen and Maya"><svg><use href="#i-kudos"/></svg></button><button type="button" data-action="toast" data-toast="Not included in this prototype" aria-label="Comment"><svg><use href="#i-comment"/></svg></button><button type="button" data-action="toast" data-toast="Not included in this prototype" aria-label="Share"><svg><use href="#i-share"/></svg></button></div>
+              <button class="view-activity" data-next="4">View activity</button>
+            </article>
+          </div>
+          <nav class="bottom-nav" aria-label="Primary navigation">
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-home"/></svg><span>Home</span><b class="nav-count">11</b></button>
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-map"/></svg><span>Maps</span></button>
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-record"/></svg><span>Record</span></button>
+            <button class="active" type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-groups"/></svg><span>Groups</span></button>
+            <button type="button" data-action="toast" data-toast="Not included in this prototype"><svg><use href="#i-you"/></svg><span>You</span></button>
+          </nav>
+        </section>
+
+        <section class="app-screen" data-screen="4" data-screen-name="Activity" aria-hidden="true">
+          <header class="status-bar map-status"><span>3:07</span><span class="status-icons">LTE 100%</span></header>
+          <div class="activity-map">
+            <span class="map-label detail-one">North Quad</span><span class="map-label detail-two">Library Walk</span><span class="map-label detail-three">College Avenue</span>
+            <svg class="route-line detail-route" viewBox="0 0 390 300" aria-hidden="true"><path d="M90 55 122 83 116 128 179 143 205 117 246 160 304 151 323 197 291 245"/><circle cx="90" cy="55" r="6"/><circle class="finish" cx="291" cy="245" r="7"/></svg>
+            <button class="circle-button map-back" data-next="3" aria-label="Back to club activity feed"><svg><use href="#i-back"/></svg></button>
+            <div class="map-actions"><button class="circle-button" type="button" data-action="toggle-save-route" aria-label="Save route" aria-pressed="false"><svg><use href="#i-map"/></svg></button><button class="circle-button" type="button" data-action="toast" data-toast="Not included in this prototype" aria-label="More options"><svg><use href="#i-more"/></svg></button></div>
+          </div>
+          <div class="screen-scroll activity-detail-scroll">
+            <article class="activity-sheet">
+              <div class="sheet-handle"></div>
+              <div class="activity-owner"><span class="avatar avatar-ellen">EP</span><div><strong>Ellen Powell</strong><span><svg><use href="#i-run"/></svg> Today &middot; North Quad campus loop</span></div><button type="button" data-action="toggle-follow" aria-pressed="false">Follow</button></div>
+              <h2>Morning Run</h2>
+              <div class="detail-metrics">
+                <span><small>Distance</small><b>5.00 mi</b></span><span><small>Avg Pace</small><b>8:52 /mi</b></span>
+                <span><small>Moving Time</small><b>44:27</b></span><span><small>Elevation Gain</small><b>164 ft</b></span>
+                <span><small>Calories</small><b>520 Cal</b></span><span><small>Avg Cadence</small><b>175 spm</b></span>
+              </div>
+              <section class="activity-challenge">
+                <span class="check-circle"><svg><use href="#i-check"/></svg></span>
+                <div><strong>Weekly challenge complete</strong><span>Ellen and Maya completed 2 of 2 shared runs. North Quad Run Club is now 68% complete.</span></div>
+              </section>
+              <div class="gear-list">
+                <div><svg><use href="#i-shoe"/></svg><span>ASICS Superblast</span></div>
+                <div><svg><use href="#i-watch"/></svg><span>Garmin Forerunner 265S</span></div>
+                <div><svg><use href="#i-cloud"/></svg><span>Partly cloudy, 75&deg;F &middot; Easy effort</span></div>
+              </div>
+              <div class="club-social-actions"><button type="button" data-action="toggle-both-kudos" aria-pressed="false"><svg><use href="#i-kudos"/></svg><span>Give kudos to both</span></button><button type="button" data-action="view-club-progress" data-next="1"><svg><use href="#i-groups"/></svg><span>View club progress</span></button></div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <div class="prototype-controls" aria-label="Prototype controls">
+      <div class="screen-indicator"><span class="indicator-label">Groups</span><span class="indicator-dots" aria-hidden="true"><i class="active"></i><i></i><i></i><i></i><i></i></span></div>
+      <button class="restart-button" type="button">Restart prototype</button>
+    </div>
+  </main>
+
+  <div class="prototype-toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
